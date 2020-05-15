@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 
 class LinkedNode:
     def __init__(self, data):
