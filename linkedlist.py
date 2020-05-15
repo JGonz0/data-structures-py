@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 class LinkedNode:
+
     def __init__(self, data):
         self.data = data
         self.next = None
@@ -20,6 +21,7 @@ class LinkedNode:
         return
     
 class LinkedList:
+    
     def __init__(self,head=None):
         self.head = head
 
@@ -67,7 +69,7 @@ class LinkedList:
             current_node = current_node.next
             leng += 1
     
-    def insertion(self,data,idx):
+    def insertion(self,idx,data):
         if idx > self.len():
             print("Indice fuera de limites")
             return

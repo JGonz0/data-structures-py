@@ -3,25 +3,25 @@
 class UniqueStack:
 
     def __init__(self):
-        self._stack = []
+        self.stack = []
         self._set = set()
     
     def push(self,data):
         if data not in self._set:
-            self._stack.append(data)
+            self.stack.append(data)
             self._set.add(data)
             return
         print("Error: Duplicated data in the stack")
         return
     
     def pop(self):
-        if self._stack == []:
+        if self.stack == []:
             print("Stack is empty")
             return
-        return self._stack.pop()
+        return self.stack.pop()
 
     def graphic_print(self):
-        rev_stack = self._stack[::-1]
+        rev_stack = self.stack[::-1]
         for i in range(len(rev_stack)):
             if i == 0:
                 print("[ Last Item ]")
@@ -31,31 +31,37 @@ class UniqueStack:
         return
 
     def peek(self):
-        return self._stack[-1]
+        return self.stack[-1]
 
     def show(self):
-        print(self._stack)
+        print(self.stack)
         return
+    
+    def stack_size(self):
+        leng = 0
+        for _ in self.stack:
+            leng += 1
+        return leng
 
 class Stack:
     def __init__(self):
-        self._stack = []
+        self.stack = []
     
     def push(self,data):
-        self._stack.append(data)
+        self.stack.append(data)
         return
     
     def pop(self):
-        if self._stack == []:
+        if self.stack == []:
             print("Stack is empty")
             return
-        return self._stack.pop()
+        return self.stack.pop()
     
     def peek(self):
-        return self._stack[-1]
+        return self.stack[-1]
     
     def graphic_print(self):
-        rev_stack = self._stack[::-1]
+        rev_stack = self.stack[::-1]
         for i in range(len(rev_stack)):
             if i == 0:
                 print("[ Last Item ]")
@@ -65,7 +71,7 @@ class Stack:
         return
     
     def show(self):
-        print(self._stack)
+        print(self.stack)
         return
     
     def replicate(self, times):
@@ -76,6 +82,12 @@ class Stack:
         for _ in range(times):
             self.push(dup)
         return
+    
+    def stack_size(self):
+        leng = 0
+        for _ in self.stack:
+            leng += 1
+        return leng
 
 if __name__ == '__main__':
 
@@ -94,3 +106,4 @@ if __name__ == '__main__':
     Astack.push(7)
     Astack.replicate(3)
     Astack.graphic_print()
+
