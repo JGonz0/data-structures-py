@@ -8,14 +8,14 @@ class LinkedNode:
     
     def get_node(self):
         return self.data
-    
+
     def set_node(self,data):
         self.data = data
         return
-    
+
     def get_next(self):
         return self.next
-    
+ 
     def set_next(self, node):
         self.next = node
         return
@@ -36,7 +36,7 @@ class LinkedList:
             current_node = current_node.next
         current_node.next = new_node
         return
-    
+
     def node_add(self,node):
         if type(node) is type(LinkedNode(1)):
             if self.head is None:
@@ -50,7 +50,7 @@ class LinkedList:
                     return
                 current_node = current_node.next
         else:
-            print("Operacion invalida")
+            print("Invalid action")
     
     def display(self):
         current_node = self.head
@@ -71,7 +71,7 @@ class LinkedList:
     
     def insertion(self,idx,data):
         if idx > self.len():
-            print("Indice fuera de limites")
+            print("Index out of bounds")
             return
         
         new_node = LinkedNode(data)
@@ -94,7 +94,7 @@ class LinkedList:
     
     def remover(self,idx):
         if idx > self.len() - 1:
-            print("Indice fuera de limites")
+            print("Index out of bounds")
             return
         
         if idx == 0:
